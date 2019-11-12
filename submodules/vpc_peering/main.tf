@@ -1,7 +1,7 @@
 /*
 * VPC PEERING MODULE DEFINITION
 *
-* Author       : Joffrey DUPIRE <joffrey.dupire@ynov.com> 
+* Author       : Joffrey DUPIRE <joffrey.dupire@gmail.com> 
 * Purpose      : A fulfully modelable VPC
 * Last updated : 01/11/2018 
 *

@@ -1,46 +1,13 @@
-# Module VPC
+# AWS NETWORK MODULE
 
-Last update : 18/09/2018
+## ABOUT
+Terraform module to manage all network related on AWS. With this module you could deploy a basic network or a complex one.
 
-# SUMMARY
+You could manage all parameters related to VPC, and even more, VPN Connections (BGP and/or static), subneting, vpc peering connections and flowlogs of your vpc.
 
-- [INTRODUCE](#Introduce)
-- [In_details](#In_details)
-- [TECHNICAL_DOCUMENTATION](docs/technical_docs.md)
-- [KNOWN_ISSUES](docs/issues.md)
-- [CHANGELOG](docs/change_log.md)
 
-# Introduce
-This module deploy a VPC (Virtual Private Cloud) currently on AWS, at term it'll evolve to support GCP (Google Cloud Plateform) or any other cloud providers.
+## FEATURES
+Each features added is in a submodule, and use simple conditions to deploy or not the feature. (Example, I need avpn connections, I set have_vpn_connections to true)
 
-This module will evolve so stay tuned
-
-To consult recent changes and evolutions, see the CHANGELOG.md file
-
-# In_details
-This module use conditionals vars to deploy resources, in the case you choose to deploy this module without setting the optionals vars you'll only have a VPC and nothing more.
-
-Please check the Optionals vars part if you want to deploy :
-
- - Public subnets with NAT Gateways (and their route tables)
- - Private subnets and their route tables
- - Enable DNS resolution inside the vpc
- - Enable FlowLogs
-    - with default cloudwatch log group expire rule (7d)
- - Force S3 logging bucket creation
-    - with default object expire rules
-        - 15d : standard_ia
-        - 30d : onezone_ia
-        - 60d : glacier
-        - 90d : Finally expire
- - Kinesis data stream to send CWL logs to s3 (via Lambda function)
- - Enable IPv6
- - Enable ClassicLink
- - Set default instance tenancy
- - Configure VPN Connections
- - Configure NACL (Network ACL)
- - Configure VPC Peering
-
-     
-
-Made with :heart: and :coffee:
+## TERRAFORM VERSION
+This module support only terraform 0.12 and above

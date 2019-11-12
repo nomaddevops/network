@@ -1,7 +1,7 @@
 /*
 * VPN MODULE OUTPUTED RESOURCES
 *
-* Author       : Joffrey DUPIRE <joffrey.dupire@ynov.com> 
+* Author       : Joffrey DUPIRE <joffrey.dupire@gmail.com> 
 * Last updated : 15/06/2018 
 *
 */

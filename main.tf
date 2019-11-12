@@ -1,7 +1,7 @@
 /*
 * VPC MODULE DEFINITION
 *
-* Author       : Joffrey DUPIRE <joffrey.dupire@ynov.com> 
+* Author       : Joffrey DUPIRE <joffrey.dupire@gmail.com> 
 * Purpose      : A fulfully modelable VPC
 * Last updated : 15/06/2018 
 *
