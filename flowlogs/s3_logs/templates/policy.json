@@ -1,0 +1,19 @@
+{
+    "Id": "Policy1568989222918",
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1568989217849",
+            "Action": [
+                "s3:PutObject"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:s3:::${bucket}/*",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::${accountid}:root"
+                ]
+            }
+        }
+    ]
+}
