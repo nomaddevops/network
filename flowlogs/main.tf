@@ -33,7 +33,7 @@ resource "aws_cloudwatch_log_group" "vpc_rejected_lg" {
 
 resource "aws_flow_log" "network_rejected_flow" {
   count          = var.have_flowlogs == true ? 1 : 0
-  log_group_name = aws_cloudwatch_log_group.vpc_rejected_lg[count.index].name
+  log_destination = aws_cloudwatch_log_group.vpc_rejected_lg[count.index].name
   iam_role_arn   = module.iam.role_arn
   vpc_id         = var.vpc_id
   traffic_type   = "REJECT"
@@ -62,7 +62,7 @@ resource "aws_cloudwatch_log_group" "vpc_accepted_lg" {
 
 resource "aws_flow_log" "network_accepted_flow" {
   count          = var.have_flowlogs == true ? 1 : 0
-  log_group_name = aws_cloudwatch_log_group.vpc_accepted_lg[count.index].name
+  log_destination = aws_cloudwatch_log_group.vpc_accepted_lg[count.index].name
   iam_role_arn   = module.iam.role_arn
   vpc_id         = var.vpc_id
   traffic_type   = "ACCEPT"

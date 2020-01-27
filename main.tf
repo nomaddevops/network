@@ -57,7 +57,7 @@ module "subnets" {
   vpc_id                     = aws_vpc.vpc.id
   availability_zones         = [data.aws_availability_zones.availability_zones.names]
   cidr_block                 = aws_vpc.vpc.cidr_block
-  virtual_private_gateway_id = var.have_vpn_connections == true ?list(module.vpn.virtual_private_gateway_id) : []# if have vpn true must be set
+  virtual_private_gateway_id = var.have_vpn_connections == true ? list(module.vpn.virtual_private_gateway_id) : [] # if have vpn true must be set
 }
 
 module "flowlogs" {
