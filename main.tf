@@ -33,7 +33,6 @@ resource "aws_vpc" "vpc" {
     Environment       = title(var.plateform_environment)
     Delivered_Service = "Network"
     AWS_Service       = "VPC"
-    Version           = var.module_version
   }
 }
 
@@ -51,7 +50,6 @@ module "subnets" {
   ## ENV VARS
   plateform_name        = title(var.plateform_name)
   plateform_environment = title(var.plateform_environment)
-  module_version        = var.module_version
 
   ## SUBMODULE VARS
   vpc_id                     = aws_vpc.vpc.id
@@ -90,7 +88,6 @@ module "vpc_peering" {
   #VARS IF DEPLOY
   plateform_name                             = title(var.plateform_name)
   plateform_environment                      = title(var.plateform_environment)
-  module_version                             = var.module_version
   peer_owner_ids                             = var.peer_owner_ids
   peer_vpc_ids                               = var.peer_vpc_ids
   peer_region                                = var.peer_region
@@ -113,7 +110,6 @@ module "vpn" {
   #VARS IF DEPLOY
   plateform_name        = title(var.plateform_name)
   plateform_environment = title(var.plateform_environment)
-  module_version        = var.module_version
 
   client_name         = var.vpn_client_name
   client_vpn_endpoint = var.vpn_client_endpoint
@@ -133,6 +129,5 @@ module "nacl" {
   #VARS IF DEPLOY
   Plateform_Name        = "${title(var.plateform_name)}"
   Plateform_Environment = "${title(var.plateform_environment)}"
-  Module_Version        = "${var.module_version}"
 }
 */

@@ -13,11 +13,6 @@ variable "region" {
   description = "AWS Region to use"
 }
 
-variable "module_version" {
-  description = "Current version of the module"
-  default     = "v0.0.1"
-}
-
 variable "plateform_name" {
   description = "Name of the plateform"
 }

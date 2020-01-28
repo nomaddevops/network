@@ -7,11 +7,6 @@
 *
 */
 
-variable "module_version" {
-  description = "Current version of the module"
-  default     = "v0.0.1"
-}
-
 variable "plateform_name" {
   description = "Name of the plateform"
 }
@@ -26,20 +21,20 @@ variable "have_vpn_connections" {
 }
 
 variable "client_name" {
-  type    = "list"
+  type    = list(string)
   default = []
 }
 
 variable "vpc_id" {}
 
 variable "client_vpn_endpoint" {
-  type    = "list"
+  type    = list(string)
   default = []
 }
 
 variable "static_routes_only" {
  description = "use static route"
- type = "list"
+ type = list(string)
  default = [] 
 }
 
@@ -48,6 +43,6 @@ variable "amazon_side_asn" {
 }
 
 variable "bgp_asn" {
-  type = "list"
+  type = list(string)
   default = ["65000"]
 }

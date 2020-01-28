@@ -26,5 +26,5 @@ resource "aws_lambda_function" "processing" {
   }
 
   source_code_hash = "${base64sha256("${path.module}/templates/handler.zip")}"
-  depends_on       = ["data.archive_file.lambda_source"]
+  depends_on       = [data.archive_file.lambda_source]
 }

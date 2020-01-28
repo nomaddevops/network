@@ -37,7 +37,7 @@ resource "aws_flow_log" "network_rejected_flow" {
   iam_role_arn   = module.iam.role_arn
   vpc_id         = var.vpc_id
   traffic_type   = "REJECT"
-  depends_on     = ["aws_cloudwatch_log_group.vpc_rejected_lg"]
+  depends_on     = [aws_cloudwatch_log_group.vpc_rejected_lg]
 }
 
 /*
@@ -66,7 +66,7 @@ resource "aws_flow_log" "network_accepted_flow" {
   iam_role_arn   = module.iam.role_arn
   vpc_id         = var.vpc_id
   traffic_type   = "ACCEPT"
-  depends_on     = ["aws_cloudwatch_log_group.vpc_accepted_lg"]
+  depends_on     = [aws_cloudwatch_log_group.vpc_accepted_lg]
 }
 
 module "s3_logging_bucket" {

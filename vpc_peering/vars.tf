@@ -7,11 +7,6 @@
 *
 */
 
-variable "module_version" {
-  description = "Current version of the module"
-  default     = "v0.0.1"
-}
-
 variable "plateform_name" {
   description = "Name of the plateform"
 }
@@ -31,25 +26,25 @@ variable "have_vpc_peering" {
 }
 
 variable "peer_owner_ids" {
-  type        = "list"
+  type        = list(string)
   description = "List of AWS Account ID of the peer"
   default     = []
 }
 
 variable "peer_vpc_ids" {
-  type        = "list"
+  type        = list(string)
   description = "List of all peer vpc id"
   default     = []
 }
 
 variable "peer_region" {
-  type        = "list"
+  type        = list(string)
   description = "List of region for each vpc peer"
   default     = []
 }
 
 variable "peer_friendly_name" {
-  type        = "list"
+  type        = list(string)
   description = "List of peer name"
   default     = []
 }

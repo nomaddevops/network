@@ -5,10 +5,6 @@
 * Purpose      : A fulfully modelable subnets
 * Last Updated : 13/06/2018
 */
-variable "module_version" {
-  description = "Current version of the module"
-  default     = "v0.0.1"
-}
 
 variable "plateform_name" {
   description = "Name of the plateform"
@@ -42,12 +38,12 @@ variable "vpc_id" {
 }
 
 variable "availability_zones" {
-  type        = "list"
+  type        = list(string)
   description = "List of availability zones to use in the current region"
 }
 
 variable "virtual_private_gateway_id" {
-  type = "list"
+  type = list(string)
   description = "ID of the virtual private gateway for vpn connections"
 }
 
