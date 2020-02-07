@@ -38,7 +38,7 @@ resource "aws_vpc" "vpc" {
 }
 
 module "subnets" {
-  source = "./subnets"
+  source = "./modules/subnets"
 
   #CONDITIONS TO DEPLOY
   have_public_subnets  = var.have_public_subnets
@@ -61,7 +61,7 @@ module "subnets" {
 }
 
 module "flowlogs" {
-  source = "./flowlogs"
+  source = "./modules/flowlogs"
 
   #CONDITIONS TO DEPLOY
   have_flowlogs       = var.have_flowlogs
@@ -82,7 +82,7 @@ module "flowlogs" {
 }
 
 module "vpc_peering" {
-  source = "./vpc_peering"
+  source = "./modules/vpc_peering"
 
   #CONDITIONS TO DEPLOY
   have_vpc_peering = var.have_vpc_peering
@@ -105,7 +105,7 @@ module "vpc_peering" {
 }
 
 module "vpn" {
-  source = "./vpn"
+  source = "./modules/vpn"
 
   #CONDITIONS TO DEPLOY
   have_vpn_connections = var.have_vpn_connections
@@ -125,7 +125,7 @@ module "vpn" {
 
 /*
 module "nacl" {
-  source = "./nacl"
+  source = "./modules/nacl"
 
   #CONDITIONS TO DEPLOY
   have_nacl = "${var.have_nacl}"
