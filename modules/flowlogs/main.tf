@@ -5,7 +5,7 @@
 data "aws_region" "current" {}
 
 module "iam" {
-  source        = "./IAM"
+  source        = "./modules/IAM"
   name          = var.name
   environment   = var.environment
   have_flowlogs = var.have_flowlogs
@@ -70,7 +70,7 @@ resource "aws_flow_log" "network_accepted_flow" {
 }
 
 module "s3_logging_bucket" {
-  source                        = "./s3_logs"
+  source                        = "./modules/s3_logs"
   have_kinesis_stream           = var.have_kinesis_stream
   have_flowlogs                 = var.have_flowlogs
   have_logging_bucket           = var.have_logging_bucket
@@ -85,7 +85,7 @@ module "s3_logging_bucket" {
 }
 
 module "data_stream" {
-  source              = "./kinesis_stream"
+  source              = "./modules/kinesis_stream"
   have_flowlogs       = var.have_flowlogs
   have_kinesis_stream = var.have_kinesis_stream
   name                = var.name

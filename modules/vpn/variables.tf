@@ -26,13 +26,17 @@ variable "have_vpn_connections" {
 }
 
 variable "client_name" {
+  description = "Common name for the vpn client"
   type    = "list"
   default = []
 }
 
-variable "vpc_id" {}
+variable "vpc_id" {
+  description = "ID of the vpc"
+}
 
 variable "client_vpn_endpoint" {
+  description = "IP Address for the vpn client"
   type    = "list"
   default = []
 }
@@ -44,10 +48,12 @@ variable "static_routes_only" {
 }
 
 variable "amazon_side_asn" {
+  description = "ASN on AWS side"
   default = 65000
 }
 
 variable "bgp_asn" {
+  description = "ASN Number for client"
   type = "list"
   default = ["65000"]
 }

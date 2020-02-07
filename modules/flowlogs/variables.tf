@@ -38,18 +38,22 @@ variable "s3_expiration_enabled" {
 
 variable "logs_expiration_standard" {
   default = 15
+  description = "Delay for standard expiration"
 }
 
 variable "logs_expiration_onezone" {
   default = 30
+  description = "Delay for onezone expiration"
 }
 
 variable "logs_expiration_glacier" {
   default = 60
+  description = "Delay for glacier expiration"
 }
 
 variable "logs_complete_expiration_days" {
   default = 90
+  description = "Delay for permanent expiration"
 }
 
 variable "have_logging_bucket" {
@@ -59,5 +63,5 @@ variable "have_logging_bucket" {
 
 
 variable "region" {
-  
+  description = "AWS Region to use"
 }
